@@ -1,0 +1,92 @@
+body {
+  font-family: Roboto;
+  font-size: 10px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.app {
+  padding-top: 5rem;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.wrap {
+  width: 500px;
+}
+
+$height: 46px;
+
+.select {
+  width: 100%;
+  position: relative;
+  z-index: 100;
+
+  &.open {
+    .select__dropdown {
+      display: block;
+    }
+    .select__input {
+      border-bottom: none;
+    }
+  }
+
+  &__backdrop{
+    //background-color: red;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: none;
+  }
+
+  &__input {
+    border: 1px solid gray;
+    border-radius: 5px;
+    height: $height;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    cursor: pointer;
+    justify-content: space-between;
+  }
+
+  &__dropdown {
+    position: absolute;
+    border: 1px solid gray;
+    border-radius: 5px;
+    top: $height;
+    left: 0;
+    right: 0;
+    box-shadow: 2px 3px 5px rgba(0,0,0,.3);
+    padding: 0 1rem;
+    display: none;
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item {
+    padding: 1rem;
+    border-bottom: 1px solid gray;
+
+    &:hover {
+      background-color: #eee;
+      cursor: pointer;
+      transition: all ease-in .1s;
+    }
+
+    &.selected {
+      background-color: #fad64e;
+    }
+  }
+}
